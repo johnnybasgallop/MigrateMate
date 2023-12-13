@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		CA2BED352B29B45C0011CE37 /* PickerOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2BED342B29B45C0011CE37 /* PickerOptions.swift */; };
+		CA2BED372B2A4F110011CE37 /* ApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2BED362B2A4F110011CE37 /* ApiController.swift */; };
+		CA2BED3B2B2A4FB90011CE37 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2BED3A2B2A4FB90011CE37 /* Country.swift */; };
+		CA2BED3E2B2A53480011CE37 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CA2BED3D2B2A53480011CE37 /* Alamofire */; };
 		CA85462F2B2945CC001056B0 /* MigrateMateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA85462E2B2945CC001056B0 /* MigrateMateApp.swift */; };
 		CA8546312B2945CC001056B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8546302B2945CC001056B0 /* ContentView.swift */; };
 		CA8546332B2945CE001056B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA8546322B2945CE001056B0 /* Assets.xcassets */; };
@@ -47,6 +50,8 @@
 
 /* Begin PBXFileReference section */
 		CA2BED342B29B45C0011CE37 /* PickerOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerOptions.swift; sourceTree = "<group>"; };
+		CA2BED362B2A4F110011CE37 /* ApiController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiController.swift; sourceTree = "<group>"; };
+		CA2BED3A2B2A4FB90011CE37 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		CA85462B2B2945CC001056B0 /* MigrateMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MigrateMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA85462E2B2945CC001056B0 /* MigrateMateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrateMateApp.swift; sourceTree = "<group>"; };
 		CA8546302B2945CC001056B0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -65,6 +70,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA8546522B295397001056B0 /* FirebaseDatabase in Frameworks */,
+				CA2BED3E2B2A53480011CE37 /* Alamofire in Frameworks */,
 				CA8546602B295397001056B0 /* FirebaseFunctionsCombine-Community in Frameworks */,
 				CA8546582B295397001056B0 /* FirebaseFirestore in Frameworks */,
 				CA8546442B295397001056B0 /* FirebaseAnalyticsSwift in Frameworks */,
@@ -97,6 +103,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA2BED382B2A4F760011CE37 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CA2BED362B2A4F110011CE37 /* ApiController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CA2BED392B2A4F950011CE37 /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				CA2BED3A2B2A4FB90011CE37 /* Country.swift */,
+			);
+			path = Structs;
+			sourceTree = "<group>";
+		};
 		CA8546222B2945CC001056B0 = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +138,8 @@
 		CA85462D2B2945CC001056B0 /* MigrateMate */ = {
 			isa = PBXGroup;
 			children = (
+				CA2BED392B2A4F950011CE37 /* Structs */,
+				CA2BED382B2A4F760011CE37 /* Controller */,
 				CA85467F2B295D8E001056B0 /* MigrateMate.entitlements */,
 				CA85467A2B295570001056B0 /* Models */,
 				CA8546772B295435001056B0 /* Screens */,
@@ -198,6 +222,7 @@
 				CA85466F2B295397001056B0 /* FirebaseRemoteConfigSwift */,
 				CA8546712B295397001056B0 /* FirebaseStorage */,
 				CA8546732B295397001056B0 /* FirebaseStorageCombine-Community */,
+				CA2BED3D2B2A53480011CE37 /* Alamofire */,
 			);
 			productName = MigrateMate;
 			productReference = CA85462B2B2945CC001056B0 /* MigrateMate.app */;
@@ -229,6 +254,7 @@
 			mainGroup = CA8546222B2945CC001056B0;
 			packageReferences = (
 				CA85463E2B295397001056B0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				CA2BED3C2B2A53480011CE37 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = CA85462C2B2945CC001056B0 /* Products */;
 			projectDirPath = "";
@@ -259,7 +285,9 @@
 			files = (
 				CA2BED352B29B45C0011CE37 /* PickerOptions.swift in Sources */,
 				CA85467E2B2955F5001056B0 /* SignUpScreen.swift in Sources */,
+				CA2BED372B2A4F110011CE37 /* ApiController.swift in Sources */,
 				CA85467C2B2955B6001056B0 /* SignInViewModel.swift in Sources */,
+				CA2BED3B2B2A4FB90011CE37 /* Country.swift in Sources */,
 				CA8546792B295445001056B0 /* Main.swift in Sources */,
 				CA8546312B2945CC001056B0 /* ContentView.swift in Sources */,
 				CA85462F2B2945CC001056B0 /* MigrateMateApp.swift in Sources */,
@@ -472,6 +500,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		CA2BED3C2B2A53480011CE37 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
 		CA85463E2B295397001056B0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -483,6 +519,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		CA2BED3D2B2A53480011CE37 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA2BED3C2B2A53480011CE37 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		CA85463F2B295397001056B0 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CA85463E2B295397001056B0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

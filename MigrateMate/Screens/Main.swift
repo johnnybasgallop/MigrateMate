@@ -9,12 +9,15 @@ import SwiftUI
 
 struct Main: View {
     @Binding var ActiveSearch : Bool
+    @StateObject var apiController = ApiController()
+    
+    
     var body: some View {
         
         VStack{
             if !ActiveSearch{
                 topBar()
-                SearchScreen()
+                SearchScreen(apiController: apiController)
             }
         }
         
@@ -72,7 +75,7 @@ struct LogoutButton : View {
 
 
 struct SearchScreen : View {
-    
+    @ObservedObject var apiController: ApiController
    
     let countries = [
         "United States",
@@ -90,7 +93,7 @@ struct SearchScreen : View {
     ]
     
     let citiesByCountry: [String: [String]] = [
-        "United States": ["New York City", "Los Angeles", "Chicago", "Houston", "Phoenix"],
+        "United States": ["New York", "Los Angeles", "Chicago", "Houston", "Phoenix"],
         "China": ["Shanghai", "Beijing", "Guangzhou", "Shenzhen", "Chongqing"],
         "India": ["Mumbai", "Delhi", "Bangalore", "Chennai", "Kolkata"],
         "Brazil": ["Sao Paulo", "Rio de Janeiro", "Brasilia", "Salvador", "Fortaleza"],
@@ -125,6 +128,8 @@ struct SearchScreen : View {
        
             
             VStack{
+                
+                Text("\(apiController.ppsmCC)")
                 
                 Picker("Select Country", selection: $selectedCountry) {
                     ForEach(0..<countries.count) {
@@ -168,16 +173,30 @@ struct SearchScreen : View {
                 
             }.offset(y: -screenHeight * 0.06)
             
-            SearchButton()
+            SearchButton(apiController: apiController,selectedCountry: $selectedCountry, selectedCity: $selectedCity, countries: countries, cities: citiesByCountry)
         }
         .navigationTitle("Country and City Picker")
     }
 }
 
 struct SearchButton : View {
+    @ObservedObject var apiController: ApiController
+    @Binding var selectedCountry: Int
+    @Binding var selectedCity: Int
+    var countries : [String]
+    var cities: [String: [String]]
+    
     var body: some View {
         Button(action: {
             print("GO")
+            
+            var country : String = countries[selectedCountry]
+            var city : [String] = cities[country]!
+            var cityValue : String = city[selectedCity]
+            
+            print(cityValue)
+            
+            apiController.fetchCostOfLivingData(Country: countries[selectedCountry], City: cityValue)
         }, label: {
             Text("Search").multilineTextAlignment(.center).foregroundColor(.white).fontWeight(.bold)
         }).frame(width: screenWidth * 0.75 ,height: screenHeight * 0.06)
