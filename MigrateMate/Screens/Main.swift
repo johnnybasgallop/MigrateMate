@@ -8,21 +8,34 @@
 import SwiftUI
 
 struct Main: View {
-    @AppStorage ("log_state") var log_state = false
+    @Binding var ActiveSearch : Bool
     var body: some View {
+        
         VStack{
-            HStack{
-             LogoutButton()
-                Spacer()
-                
-            TitleLogo()
-                
-               Spacer()
-                
-                
-            }.padding()
-            Spacer()
+            if !ActiveSearch{
+                topBar()
+                SearchScreen()
+            }
         }
+        
+    }
+}
+
+struct topBar : View {
+    var body: some View {
+        
+        HStack{
+            LogoutButton()
+            Spacer()
+            
+            TitleLogo()
+            
+            Spacer()
+            
+            
+        }.padding()
+        Spacer()
+        
     }
 }
 
@@ -40,23 +53,139 @@ struct LogoutButton : View {
             })
         
         .alert(isPresented: $logoutAlertShowing) {
-                   Alert(
-                    title: Text("Logout of account"),
-                    message: Text("By confirming you will logout of your MigrateMate account"),
-                       primaryButton: .default(Text("Logout")) {
-                           
-                           log_state = false
-                           
-                          logoutAlertShowing = false
-                       },
-                       secondaryButton: .cancel(Text("Cancel")) {
-                           logoutAlertShowing = false
-                       }
-                   )
-               }
+            Alert(
+                title: Text("Logout of account"),
+                message: Text("By confirming you will logout of your MigrateMate account"),
+                primaryButton: .default(Text("Logout")) {
+                    
+                    log_state = false
+                    
+                    logoutAlertShowing = false
+                },
+                secondaryButton: .cancel(Text("Cancel")) {
+                    logoutAlertShowing = false
+                }
+            )
+        }
+    }
+}
+
+
+struct SearchScreen : View {
+    
+   
+    let countries = [
+        "United States",
+        "China",
+        "India",
+        "Brazil",
+        "Russia",
+        "Japan",
+        "Germany",
+        "United Kingdom",
+        "France",
+        "Italy",
+        "Australia", "South Korea", "Mexico", "South Africa", "Turkey",
+        "Argentina", "Netherlands", "Sweden", "Switzerland", "Singapore"
+    ]
+    
+    let citiesByCountry: [String: [String]] = [
+        "United States": ["New York City", "Los Angeles", "Chicago", "Houston", "Phoenix"],
+        "China": ["Shanghai", "Beijing", "Guangzhou", "Shenzhen", "Chongqing"],
+        "India": ["Mumbai", "Delhi", "Bangalore", "Chennai", "Kolkata"],
+        "Brazil": ["Sao Paulo", "Rio de Janeiro", "Brasilia", "Salvador", "Fortaleza"],
+        "Russia": ["Moscow", "Saint Petersburg", "Novosibirsk", "Yekaterinburg", "Nizhny Novgorod"],
+        "Japan": ["Tokyo", "Yokohama", "Osaka", "Nagoya", "Sapporo"],
+        "Germany": ["Berlin", "Hamburg", "Munich", "Cologne", "Frankfurt"],
+        "United Kingdom": ["London", "Birmingham", "Manchester", "Glasgow", "Liverpool"],
+        "France": ["Paris", "Marseille", "Lyon", "Toulouse", "Nice"],
+        "Italy": ["Rome", "Milan", "Naples", "Turin", "Palermo"],
+        "Australia": ["Sydney", "Melbourne", "Brisbane", "Perth", "Adelaide"],
+        "South Korea": ["Seoul", "Busan", "Incheon", "Daegu", "Daejeon"],
+        "Mexico": ["Mexico City", "Guadalajara", "Monterrey", "Puebla", "Tijuana"],
+        "South Africa": ["Johannesburg", "Cape Town", "Durban", "Pretoria", "Port Elizabeth"],
+        "Turkey": ["Istanbul", "Ankara", "Izmir", "Bursa", "Adana"],
+        "Argentina": ["Buenos Aires", "Cordoba", "Rosario", "Mendoza", "San Miguel de Tucuman"],
+        "Netherlands": ["Amsterdam", "Rotterdam", "The Hague", "Utrecht", "Eindhoven"],
+        "Sweden": ["Stockholm", "Gothenburg", "Malmö", "Uppsala", "Linköping"],
+        "Switzerland": ["Zurich", "Geneva", "Basel", "Bern", "Lausanne"],
+        "Singapore": ["Singapore City", "Jurong", "Tampines", "Woodlands", "Changi"]
+    ]
+    
+    @State private var selectedCountry = 0
+    @State private var selectedCity = 0
+    
+    var body: some View {
+        
+        VStack {
+            
+            Image("SearchIllustration").resizable()
+                .frame(width: screenWidth * 0.6, height: screenWidth * 0.6)
+                .offset(y: -screenHeight * 0.12)
+       
+            
+            VStack{
+                
+                Picker("Select Country", selection: $selectedCountry) {
+                    ForEach(0..<countries.count) {
+                        Text(self.countries[$0])
+                    }
+                }
+                .accentColor(Color("PrimaryCol"))
+                .pickerStyle(.menu)
+                
+                .padding()
+                .background(RoundedRectangle(cornerRadius: 25)
+                    .frame(width: screenWidth * 0.7)
+                    .foregroundColor(.white)
+                    .shadow(color: Color.black.opacity(0.2), radius: 4, x: 0, y: 2)
+                )
+                .foregroundColor(.blue) // Set the text color here
+                .padding()
+                
+                
+                
+                Picker("Select City", selection: $selectedCity) {
+                    if let cities = citiesByCountry[countries[selectedCountry]] {
+                        ForEach(0..<cities.count) {
+                            Text(cities[$0]).fontWeight(.bold)
+                        }
+                    }
+                }
+                
+//                Add extra picker if its USA to select the State then the city
+                
+                .accentColor(Color("PrimaryCol"))
+                .pickerStyle(DefaultPickerStyle()) // Use DefaultPickerStyle to have the native look and feel
+                .padding()
+                .background(RoundedRectangle(cornerRadius: 25)
+                    .frame(width: screenWidth * 0.7)
+                    .foregroundColor(.white)
+                    .shadow(color: Color.black.opacity(0.2), radius: 4, x: 0, y: 2)
+                )
+                .foregroundColor(.blue) // Set the text color here
+                .padding()
+                
+            }.offset(y: -screenHeight * 0.06)
+            
+            SearchButton()
+        }
+        .navigationTitle("Country and City Picker")
+    }
+}
+
+struct SearchButton : View {
+    var body: some View {
+        Button(action: {
+            print("GO")
+        }, label: {
+            Text("Search").multilineTextAlignment(.center).foregroundColor(.white).fontWeight(.bold)
+        }).frame(width: screenWidth * 0.75 ,height: screenHeight * 0.06)
+            .background(Color("PrimaryCol"))
+            .cornerRadius(20)
     }
 }
 
 #Preview {
-    Main()
+    Main(ActiveSearch: .constant(false))
 }

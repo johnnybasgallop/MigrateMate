@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Around the world-rafiki.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
