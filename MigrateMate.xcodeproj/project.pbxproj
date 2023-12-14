@@ -11,6 +11,8 @@
 		CA2BED372B2A4F110011CE37 /* ApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2BED362B2A4F110011CE37 /* ApiController.swift */; };
 		CA2BED3B2B2A4FB90011CE37 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2BED3A2B2A4FB90011CE37 /* Country.swift */; };
 		CA2BED3E2B2A53480011CE37 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CA2BED3D2B2A53480011CE37 /* Alamofire */; };
+		CA2BED402B2A86CE0011CE37 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2BED3F2B2A86CE0011CE37 /* MainScreen.swift */; };
+		CA2BED422B2AEDE60011CE37 /* ItemHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2BED412B2AEDE60011CE37 /* ItemHelper.swift */; };
 		CA85462F2B2945CC001056B0 /* MigrateMateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA85462E2B2945CC001056B0 /* MigrateMateApp.swift */; };
 		CA8546312B2945CC001056B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8546302B2945CC001056B0 /* ContentView.swift */; };
 		CA8546332B2945CE001056B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA8546322B2945CE001056B0 /* Assets.xcassets */; };
@@ -52,6 +54,8 @@
 		CA2BED342B29B45C0011CE37 /* PickerOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerOptions.swift; sourceTree = "<group>"; };
 		CA2BED362B2A4F110011CE37 /* ApiController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiController.swift; sourceTree = "<group>"; };
 		CA2BED3A2B2A4FB90011CE37 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		CA2BED3F2B2A86CE0011CE37 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		CA2BED412B2AEDE60011CE37 /* ItemHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemHelper.swift; sourceTree = "<group>"; };
 		CA85462B2B2945CC001056B0 /* MigrateMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MigrateMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA85462E2B2945CC001056B0 /* MigrateMateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrateMateApp.swift; sourceTree = "<group>"; };
 		CA8546302B2945CC001056B0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -148,6 +152,7 @@
 				CA8546302B2945CC001056B0 /* ContentView.swift */,
 				CA8546322B2945CE001056B0 /* Assets.xcassets */,
 				CA8546342B2945CE001056B0 /* Preview Content */,
+				CA2BED412B2AEDE60011CE37 /* ItemHelper.swift */,
 			);
 			path = MigrateMate;
 			sourceTree = "<group>";
@@ -165,6 +170,7 @@
 			children = (
 				CA8546782B295445001056B0 /* Main.swift */,
 				CA85467D2B2955F5001056B0 /* SignUpScreen.swift */,
+				CA2BED3F2B2A86CE0011CE37 /* MainScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -289,7 +295,9 @@
 				CA85467C2B2955B6001056B0 /* SignInViewModel.swift in Sources */,
 				CA2BED3B2B2A4FB90011CE37 /* Country.swift in Sources */,
 				CA8546792B295445001056B0 /* Main.swift in Sources */,
+				CA2BED402B2A86CE0011CE37 /* MainScreen.swift in Sources */,
 				CA8546312B2945CC001056B0 /* ContentView.swift in Sources */,
+				CA2BED422B2AEDE60011CE37 /* ItemHelper.swift in Sources */,
 				CA85462F2B2945CC001056B0 /* MigrateMateApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,11 +16,11 @@ var screenHeight = UIScreen.main.bounds.height
 struct ContentView: View {
     
     @AppStorage ("log_state") var log_state = false
-    @State var Active_Search : Bool = false
+    @State var Active_Search : Bool = true
     var body: some View {
         
         if log_state{
-            Main(ActiveSearch: $Active_Search)
+            Main()
         }
         
         else if !log_state{

@@ -10,11 +10,26 @@ import Alamofire
 
 class ApiController: ObservableObject {
     
+    @Published var activeSearch : Bool = false
     
     @Published var ppsmCC: Double = 0.0
     @Published var ppsmOCC: Double = 0.0
     @Published var rcc: Double = 0.0
     @Published var rocc: Double = 0.0
+    @Published var threeBrcc: Double = 0.0
+    @Published var threeBrocc: Double = 0.0
+    
+    @Published var basicUtilities : Double = 0.0
+    @Published var wifi : Double = 0.0
+    
+    
+    @Published var petrol : Double = 0.0
+    @Published var singleTrainTicket : Double = 0.0
+    @Published var taxiTarrif : Double = 0.0
+    @Published var taxiPerKm : Double = 0.0
+    @Published var newGolf : Double = 0.0
+
+    
     
     let headers : HTTPHeaders = [
         "X-RapidAPI-Key": "3ca296bda3msh869858e0f53d7a6p1c0a7bjsn048eee98983c",
@@ -41,25 +56,15 @@ class ApiController: ObservableObject {
                        let results = json["prices"] as? [[String: Any]] {
                         
                    
+                        self.activeSearch = true
                         
+//                        Highly innefficient method of assigning the variables, but the API response is so overly populated with data, this is the quickest system
                         
                         for item in results {
                             
-                            if(item["item_name"] as! String == "Price per square meter to Buy Apartment Outside of City Center"){
-                                self.ppsmOCC = item["avg"] as! Double
-                            }
+                            runItemCheck(apicontroller: self, item: item)
                             
-                            if(item["item_name"] as! String == "Price per square meter to Buy Apartment in City Center"){
-                                self.ppsmCC = item["avg"] as! Double
-                            }
                             
-                            if(item["item_name"] as! String == "One bedroom apartment in city centre"){
-                                self.rcc = item["avg"] as! Double
-                            }
-                            
-                            if(item["item_name"] as! String == "Three bedroom apartment outside of city centre"){
-                                self.rocc = item["avg"] as! Double
-                            }
                             
                             
                         }
