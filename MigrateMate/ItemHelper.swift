@@ -62,5 +62,29 @@ func runItemCheck(apicontroller : ApiController, item: [String: Any] ){
         apicontroller.newGolf = item["avg"] as! Double
     }
     
+    if(item["item_name"] as! String == "Average Monthly Net Salary, After Tax"){
+        apicontroller.SalaryPerMonth = item["avg"] as! Double
+    }
+    
+    if(item["item_name"] as! String == "Cappuccino") {
+        apicontroller.cappuccino = item["avg"] as! Double
+    }
+    
+    if(item["item_name"] as! String == "Domestic Beer, 0.5 liter Draught"){
+        apicontroller.beer = item["avg"] as! Double
+    }
+    
+    if(item["item_name"] as! String == "Water, 1.5 liter Bottle"){
+        apicontroller.water = item["avg"] as! Double
+    }
+    
+    if(item["item_name"] as! String == "McMeal at McDonalds or Alternative Combo Meal"){
+        apicontroller.maccies = item["avg"] as! Double
+    }
+    
+    if(item["item_name"] as! String == "Meal for 2 People, Mid-range Restaurant, Three-course"){
+        apicontroller.restaurantMeal = item["avg"] as! Double
+    }
+    
     
 }

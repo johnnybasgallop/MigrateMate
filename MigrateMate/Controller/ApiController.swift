@@ -28,6 +28,14 @@ class ApiController: ObservableObject {
     @Published var taxiTarrif : Double = 0.0
     @Published var taxiPerKm : Double = 0.0
     @Published var newGolf : Double = 0.0
+    
+    @Published var SalaryPerMonth : Double = 0.0
+    
+    @Published var cappuccino : Double = 0.0
+    @Published var beer : Double = 0.0
+    @Published var water : Double = 0.0
+    @Published var maccies : Double = 0.0
+    @Published var restaurantMeal : Double = 0.0
 
     
     
