@@ -115,7 +115,7 @@ struct SearchScreen : View {
             
                 
                 Picker("Select Country", selection: $selectedCountry) {
-                    ForEach(0..<countries.count) {
+                    ForEach(0..<countries.count,id: \.self) {
                         Text(countries[$0])
                     }
                 }                .accentColor(Color("PrimaryCol"))
@@ -135,7 +135,7 @@ struct SearchScreen : View {
                 
                     Picker("Select City", selection: $selectedCity) {
                         if let cities = citiesByCountry[countries[selectedCountry]] {
-                            ForEach(0..<cities.count) {
+                            ForEach(0..<cities.count, id: \.self) {
                                 Text(cities[$0]).fontWeight(.bold)
                             }
                         }
