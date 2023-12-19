@@ -35,7 +35,7 @@ struct Main: View {
             
             else if !apiController.activeSearch && !isLoading{
                 topBar()
-                SearchScreen(apiController: apiController, isLoading: $isLoading,selectedCountry: $selectedCountry, selectedCity: $selectedCity)
+                SearchScreen(apiController: apiController, isLoading: $isLoading,selectedCountry: $selectedCountry, selectedCity: $selectedCity).offset(y: -screenHeight * 0.03)
             }
             
         }
@@ -107,7 +107,7 @@ struct SearchScreen : View {
             
             Image("SearchIllustration").resizable()
                 .frame(width: screenWidth * 0.6, height: screenWidth * 0.6)
-                .offset(y: -screenHeight * 0.12)
+                .offset(y: -screenHeight * 0.09)
        
             
             VStack{
@@ -156,6 +156,7 @@ struct SearchScreen : View {
                 .padding()
                 
             }.offset(y: -screenHeight * 0.06)
+                
             
             SearchButton(apiController: apiController,selectedCountry: $selectedCountry, isLoading: $isLoading, selectedCity: $selectedCity, countries: countries, cities: citiesByCountry)
         }

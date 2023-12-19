@@ -13,6 +13,7 @@
 		CA2BED3E2B2A53480011CE37 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CA2BED3D2B2A53480011CE37 /* Alamofire */; };
 		CA2BED402B2A86CE0011CE37 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2BED3F2B2A86CE0011CE37 /* MainScreen.swift */; };
 		CA2BED422B2AEDE60011CE37 /* ItemHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2BED412B2AEDE60011CE37 /* ItemHelper.swift */; };
+		CA5249892B312EA70053932D /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5249882B312EA70053932D /* SplashScreenView.swift */; };
 		CA85462F2B2945CC001056B0 /* MigrateMateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA85462E2B2945CC001056B0 /* MigrateMateApp.swift */; };
 		CA8546312B2945CC001056B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8546302B2945CC001056B0 /* ContentView.swift */; };
 		CA8546332B2945CE001056B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA8546322B2945CE001056B0 /* Assets.xcassets */; };
@@ -56,6 +57,7 @@
 		CA2BED3A2B2A4FB90011CE37 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		CA2BED3F2B2A86CE0011CE37 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		CA2BED412B2AEDE60011CE37 /* ItemHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemHelper.swift; sourceTree = "<group>"; };
+		CA5249882B312EA70053932D /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		CA85462B2B2945CC001056B0 /* MigrateMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MigrateMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA85462E2B2945CC001056B0 /* MigrateMateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrateMateApp.swift; sourceTree = "<group>"; };
 		CA8546302B2945CC001056B0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 		CA8546222B2945CC001056B0 = {
 			isa = PBXGroup;
 			children = (
+				CA5249882B312EA70053932D /* SplashScreenView.swift */,
 				CA85462D2B2945CC001056B0 /* MigrateMate */,
 				CA85462C2B2945CC001056B0 /* Products */,
 			);
@@ -293,6 +296,7 @@
 				CA85467E2B2955F5001056B0 /* SignUpScreen.swift in Sources */,
 				CA2BED372B2A4F110011CE37 /* ApiController.swift in Sources */,
 				CA85467C2B2955B6001056B0 /* SignInViewModel.swift in Sources */,
+				CA5249892B312EA70053932D /* SplashScreenView.swift in Sources */,
 				CA2BED3B2B2A4FB90011CE37 /* Country.swift in Sources */,
 				CA8546792B295445001056B0 /* Main.swift in Sources */,
 				CA2BED402B2A86CE0011CE37 /* MainScreen.swift in Sources */,
@@ -431,7 +435,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = MigrateMate/MigrateMate.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"MigrateMate/Preview Content\"";
 				DEVELOPMENT_TEAM = DB62R67D27;
 				ENABLE_PREVIEWS = YES;
@@ -439,8 +443,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -448,9 +452,11 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.basgallop.MigrateMate.MigrateMate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -461,7 +467,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = MigrateMate/MigrateMate.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"MigrateMate/Preview Content\"";
 				DEVELOPMENT_TEAM = DB62R67D27;
 				ENABLE_PREVIEWS = YES;
@@ -469,8 +475,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -478,9 +484,11 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.basgallop.MigrateMate.MigrateMate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

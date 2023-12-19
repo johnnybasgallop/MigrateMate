@@ -46,7 +46,7 @@ struct MainScreen : View {
                     HStack{
                         Image(systemName: "arrow.backward").font(.system(size: 26)).foregroundColor(Color("PrimaryCol")).offset(x: screenWidth * 0.08)
                         Spacer()
-                        Text("\(selectedCity.capitalized), \(selectedCountry.capitalized)").font(.system(size: 21)).fontWeight(.bold).foregroundColor(Color("PrimaryCol"))
+                        Text("\(selectedCity.capitalized), \(selectedCountry.capitalized)").font(.title2).fontWeight(.bold).foregroundColor(Color("PrimaryCol"))
                         Spacer()
                     }
                 })
@@ -79,13 +79,14 @@ struct HousingColumn: View {
     var body: some View {
         ZStack(alignment: .topLeading) {
             RoundedRectangle(cornerRadius: 15)
-                .frame(width: screenWidth * 0.93, height: screenHeight * 0.41)
+                .frame(width: screenWidth * 0.93, height: screenWidth * 0.92)
                 .foregroundColor(.white)
                 .shadow(color: Color.black.opacity(0.3), radius: 5, x: 0, y: 5)
             
             VStack(alignment: .leading) {
-                Text("Accomodation")
-                    .font(.system(size: 22,weight: .bold))
+                Text("Accommodation")
+                    .fontWeight(.bold)
+                    .font(.title2)
                     .foregroundColor(Color("PrimaryCol"))
                 
                 HousingItem(text: "$/㎡ in city centre", ImageName: "house.fill", data: apiController.ppsmCC, country: Country).foregroundColor(Color("PrimaryCol"))
@@ -124,7 +125,7 @@ struct SalaryBox : View {
             
             ZStack(alignment: .topLeading) {
                 RoundedRectangle(cornerRadius: 15)
-                    .frame(width: screenWidth * 0.93, height: screenHeight * 0.18)
+                    .frame(width: screenWidth * 0.93, height: screenWidth * 0.42)
                     .foregroundColor(Color("PrimaryCol"))
                     .shadow(color: Color.black.opacity(0.3), radius: 5, x: 0, y: 5)
                 
@@ -176,7 +177,7 @@ struct HousingItem : View {
             
             HStack{
                 Image(systemName: ImageName).frame(width: 25)
-                Text(text).font(.system(size: 15,weight: .semibold))
+                Text(text).fontWeight(.semibold).font(.subheadline)
                 Spacer()
                 
                 
@@ -189,7 +190,7 @@ struct HousingItem : View {
                 )
                 
                 
-            }.padding(.vertical,6)
+            }.padding(.vertical,screenWidth * 0.02)
                 .padding(.horizontal,3)
         }
     }
@@ -211,7 +212,7 @@ struct TransportItem : View {
             
             HStack{
                 Image(systemName: ImageName).frame(width: 25)
-                Text(text).font(.system(size: 15,weight: .semibold))
+                Text(text).fontWeight(.semibold).font(.subheadline)
                 Spacer()
                 
                 
@@ -237,7 +238,7 @@ struct BasicUtilities : View {
     var body: some View {
         ZStack(alignment: .topLeading) {
             RoundedRectangle(cornerRadius: 15)
-                .frame(width: screenWidth * 0.93, height: screenHeight * 0.21)
+                .frame(width: screenWidth * 0.93, height: screenWidth * 0.43)
                 .foregroundColor(.white)
                 .shadow(color: Color.black.opacity(0.3), radius: 5, x: 0, y: 5)
             
@@ -270,7 +271,7 @@ struct Travel : View {
     var body: some View {
         ZStack(alignment: .topLeading) {
             RoundedRectangle(cornerRadius: 15)
-                .frame(width: screenWidth * 0.93, height: screenHeight * 0.35)
+                .frame(width: screenWidth * 0.93, height: screenWidth * 0.78)
                 .foregroundColor(.white)
                 .shadow(color: Color.black.opacity(0.3), radius: 5, x: 0, y: 5)
                 
@@ -313,7 +314,7 @@ struct FoodAndDrink : View {
     var body: some View {
         ZStack(alignment: .topLeading) {
             RoundedRectangle(cornerRadius: 15)
-                .frame(width: screenWidth * 0.93, height: screenHeight * 0.35)
+                .frame(width: screenWidth * 0.93, height: screenWidth * 0.78)
                 .foregroundColor(.white)
                 .shadow(color: Color.black.opacity(0.3), radius: 5, x: 0, y: 5)
             

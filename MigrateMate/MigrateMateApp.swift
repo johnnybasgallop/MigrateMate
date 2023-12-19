@@ -23,7 +23,7 @@ struct MigrateMateApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
-            ContentView().preferredColorScheme(.light)
+            SplashScreenView().preferredColorScheme(.light)
         }
     }
 }
