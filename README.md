@@ -1,4 +1,5 @@
-
+ABOUT:
+I love seeing the difference in standard of living and prices accross different countries and cities, this app is designed with that in mind, aiming to provide a detailed look over what you can expect your expense to be all around the world, it includes a simplistic design and sign in with apple functionality to allow users to dive right in
 
 
 https://github.com/johnnybasgallop/MigrateMate/assets/94317860/ae432473-41d5-450f-bd56-29052704d4cd   
